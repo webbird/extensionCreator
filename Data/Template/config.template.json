@@ -1,0 +1,12 @@
+{
+  "nav_tabs": {
+    "order": [
+      "about"
+    ],
+    "default": "about"
+  },
+  "locale": [
+    "EN",
+    "DE"
+  ]
+}

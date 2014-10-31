@@ -1,0 +1,67 @@
+{
+  "nav_tabs": {
+    "order": [
+      "add",
+      "about"
+    ],
+    "default": "about",
+    "options": {
+      "add": {
+        "text": "Create new extension"
+      }
+    }
+  },
+  "locale": [
+    "EN",
+    "DE"
+  ],
+  "pattern": {
+    "form": {
+      "create": {
+        "action": "_self",
+        "method": "post",
+        "fields": [
+          {
+            "name": "extname",
+            "required": true,
+            "label_attr":  { "title": "This is the name of the new extension. Use CamelCase here. Examples: miniShop, kitCommands", "data-toggle": "tooltip" },
+            "constraints": { "Length": {"min": 5, "minMessage": "The name should have at least 5 letters"} }
+          },
+          { "name": "foldername", "required": true },
+          { "name": "vendorname", "required": true },
+          { "name": "vendorurl" },
+          { "name": "vendoremail", "constraints": { "Email": { "message": "The eMail address is not valid" } } },
+          { "name": "copyright", "required": true },
+          {
+            "name": "shortdesc",
+            "constraints": { "Length": {"min": 10, "minMessage": "The short description should have at least 10 letters"} }
+          },
+          {
+            "name": "longdesc",
+            "type": "textarea",
+            "constraints": { "Length": {"min": 15, "minMessage": "The description should have at least 15 letters"} }
+          }
+        ]
+      }
+    }
+  },
+  "extensiondata": {
+    "folders": [
+      "Control/Admin",
+      "Data/Locale",
+      "Template/default/admin",
+      "Template/default/css"
+    ],
+    "files": [
+      "bootstrap.include.php",
+      "CHANGELOG.md",
+      "extension.json",
+      "LICENSE.md",
+      "README.md",
+      "VERSION",
+      "Control/Admin/Admin.php",
+      "Control/Admin/About.php",
+      "Template/default/admin/about.twig"
+    ]
+  }
+}

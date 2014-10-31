@@ -1,0 +1,84 @@
+{
+  "name":"extensionCreator",
+  "guid":"8F31C714-7CD3-459E-A707-00EB1CC39AA2",
+  "category":"extension",
+  "group":"thirdParty",
+  "vendor":{
+      "name":"BlackBird Webprogrammierung",
+      "url":"http:\/\/www.webbird.de",
+      "mail":"info@webbird.de",
+      "address":{
+          "street":"Am Rodbusch 10",
+          "zip":"58730",
+          "city":"Fröndenberg",
+          "country":"Germany"
+      },
+      "phone":"+49 2303 539654"
+  },
+  "type":"application",
+  "path":"\/extension\/thirdparty\/thirdParty\/extensionCreator",
+  "namespace":"thirdParty\\extensionCreator",
+  "link":{
+    "about":"\/extensioncreator\/about"
+  },
+  "release":{
+    "number":"0.1",
+    "date":"2014-10-28",
+    "status":"beta",
+    "changelog":"https:\/\/github.com\/webbird\/kfExtensionCreator\/blob\/master\/CHANGELOG.md"
+  },
+  "description":{
+    "en":{
+      "title":"extensionCreator",
+      "short":"Create extensions for kitFramework",
+      "long":"Makes bootstrapping a new extension easy by populating the folder with some basic files",
+      "url":"https:\/\/kit2.phpmanufaktur.de\/extensionCreator"
+    },
+    "de":{
+      "title":"extensionCreator",
+      "short":"Neue Erweiterungen für das kitFramework erstellen",
+      "long":"Erleichtert das Erstellen neuer Erweiterungen, indem die grundlegende Verzeichnisstruktur und einige Dateien angelegt werden",
+      "url":"https:\/\/kit2.phpmanufaktur.de\/extensionCreator"
+    }
+  },
+  "require":{
+    "framework":{
+      "release":"0.27"
+    },
+    "extension":{
+        "phpmanufaktur":{
+            "Basic":{
+                "release":"1.0.14"
+            },
+            "Library":{
+                "release":"0.38"
+            },
+            "CommandCollection":{
+                "release":"0.40"
+            }
+        }
+    }
+  },
+  "setup": {
+      "install":"\/admin\/extensioncreator\/setup",
+      "update":"\/admin\/extensioncreator\/update",
+      "uninstall":"\/admin\/extensioncreator\/uninstall",
+      "icon_path":{
+        "BlackCat":"\/extension\/thirdparty\/thirdParty\/extensionCreator\/Data\/Setup\/Icon\/icon.png",
+        "WebsiteBaker":"\/extension\/thirdparty\/thirdParty\/extensionCreator\/Data\/Setup\/Icon\/tool_icon.png"
+      }
+  },
+  "license": {
+    "name":"MIT License",
+    "url":"https:\/\/github.com\/webbird\/kfExtensionCreator\/raw\/master\/LICENSE.md"
+  },
+  "download":{
+    "availability":"public",
+    "agreement":"free",
+    "github":{
+      "organization":"webbird",
+      "repository":"kfExtensionCreator"
+    },
+    "url":"https:\/\/github.com\/webbird\/kfExtensionCreator"
+  }
+}

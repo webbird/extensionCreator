@@ -1,0 +1,4 @@
+html body div#content div.container-fluid form div#form div{margin-bottom:3px;}
+html body div#content div.container-fluid form div#form label.required:after{content:' *';color:#c00;}
+html body div#content div.container-fluid div#form div.control-group.error .form-control{border-color:#c00;}
+html body div#content div.container-fluid div#form span.help-inline{margin-left:16.6667%;color:#c00;}

@@ -1,0 +1,65 @@
+{% embed getTemplateFile('@phpManufaktur/Basic/Template', 'framework/tool/body.twig') %}
+
+{% block title %}{{ 'extensionCreator - Create new extension'|trans }}{% endblock %}
+
+{% block stylesheet %}
+  {{ parent() }}
+  {% if fileExists(MANUFAKTUR_PATH ~ '/miniShop/Template/' ~ FRAMEWORK_TEMPLATES.0 ~ '/css/admin.min.css') %}
+    <link rel="stylesheet" type="text/css" href="{{ MANUFAKTUR_URL ~ '/miniShop/Template/' ~ FRAMEWORK_TEMPLATES.0 ~ '/css/admin.min.css' }}" />
+  {% else %}
+    <link rel="stylesheet" type="text/css" href="{{ MANUFAKTUR_URL ~ '/miniShop/Template/default/css/admin.min.css' }}" />
+  {% endif %}
+{% endblock stylesheet %}
+
+{% block content %}
+
+    <!-- {{ _self.getTemplateName() }} -->
+    <div class="container{% if usage != 'framework'%}-fluid{% endif %}">
+
+    {% include getTemplateFile('@phpManufaktur/Basic/Template', 'framework/tool/toolbar.twig') %}
+    <br /><br />
+
+    {{ alert }}
+
+{% if form %}
+    {% form_theme form '@phpManufaktur/Basic/Template/default/framework/form.fields.horizontal.twig' %}
+
+    {% if form_errors %}
+        <div class="alert alert-danger">
+        {{ form_errors|trans }}
+        </div>
+    {% endif %}
+
+    <br /><br />
+    <form class="form-horizontal" action="{{ FRAMEWORK_URL ~ '/admin/extensioncreator/save' ~ usage_param }}" method="post" role="form">
+      {{ form_widget(form) }}
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-6">
+          <button type="submit" class="btn btn-default">{{ 'Submit'|trans }}</button>
+        </div>
+      </div>
+    </form>
+{% else %}
+
+    {% if app.translator.locale == 'de' %}
+    <h3>Wie weiter?</h3>
+    <ul>
+       <li> Die Datei extension.json der neuen Erweiterung bearbeiten und anpassen.</li>
+       <li> Controller und Routen erstellen.</li>
+       <li> Funktionen hinzufügen.</li>
+    </ul>
+    Viel Glück!
+    {% else %}
+    <h3>What to do next?</h3>
+    <ul>
+        <li> Edit the extension.json of the new extension and tweak it to your needs.</li>
+        <li> Create controllers and routes.</li>
+        <li> Add features.</li>
+    </ul>
+    Good luck!
+    {% endif %}
+
+{% endif %}
+{% endblock content %}
+
+{% endembed %}
