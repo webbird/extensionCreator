@@ -11,7 +11,7 @@ return array(
     'Foldername' => 'Verzeichnisname',
     'Longdesc' => 'Beschreibung (mind. 15 Zeichen)',
     "Makes bootstrapping a new extension easy by populating the folder with some basic files" => "Erleichtert das Erstellen neuer Erweiterungen, indem die grundlegende Verzeichnisstruktur und einige Dateien angelegt werden",
-    'Shortdesc' => 'Kurzbeschreibung (mind. 15 Zeichen)',
+    'Shortdesc' => 'Kurzbeschreibung (mind. 10 Zeichen)',
     'Tabs' => 'Toolbar Reiter',
     'The eMail address is not valid' => 'Die Mailadresse ist ungültig',
     'The extension was created.' => 'Die Erweiterung wurde erstellt',

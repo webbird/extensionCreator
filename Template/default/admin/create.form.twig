@@ -28,14 +28,8 @@
     {{ alert }}
 
 {% if form %}
+
     {% form_theme form '@phpManufaktur/Basic/Template/default/framework/form.fields.horizontal.twig' %}
-
-    {% if form_errors %}
-        <div class="alert alert-danger">
-        {{ form_errors|trans }}
-        </div>
-    {% endif %}
-
     <br /><br />
     <form class="form-horizontal" action="{{ FRAMEWORK_URL ~ '/admin/extensioncreator/save' ~ usage_param }}" method="post" role="form">
       {{ form_widget(form) }}

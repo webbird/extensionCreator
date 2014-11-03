@@ -141,6 +141,8 @@ class Create extends Admin {
             '@thirdParty/extensionCreator/Template',
             'admin/create.form.twig'),
             array(
+                'usage'       => self::$usage,
+                'usage_param' => self::$usage_param,
                 'toolbar'     => $this->getToolbar('add'),
                 'form'        => ( $showform ? $form->createView() : NULL ),
                 'alert'       => $this->getAlert(),
