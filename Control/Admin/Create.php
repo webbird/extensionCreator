@@ -20,13 +20,18 @@ class Create extends Admin {
         $this->initialize($app);
 
         $form = $this->ControllerGetForm();
+        $this->setAlert('To create a new extension, please fill the form below. The new extension will be created in the "thirdparty/thirdParty" namespace.');
 
         return $this->app['twig']->render($this->app['utils']->getTemplateFile(
             '@thirdParty/extensionCreator/Template',
             'admin/create.form.twig'),
             array(
+                'usage'       => self::$usage,
+                'usage_param' => self::$usage_param,
                 'toolbar' => $this->app['utils']->getToolbar('add','extensioncreator',self::$config),
-                'form' => $form->getForm()->createView()
+                'form'        => $form->getForm()->createView(),
+                'alert'       => $this->getAlert(),
+                'form_errors' => '',
             ));
     }
 

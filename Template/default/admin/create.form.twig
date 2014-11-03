@@ -1,4 +1,10 @@
-{% embed getTemplateFile('@phpManufaktur/Basic/Template', 'framework/tool/body.twig') %}
+{% if usage == 'framework' %}
+  {% set template_file = 'framework/body.twig' %}
+{% else %}
+  {% set template_file = 'framework/tool/body.twig' %}
+{% endif %}
+
+{% embed getTemplateFile('@phpManufaktur/Basic/Template', template_file) %}
 
 {% block title %}{{ 'extensionCreator - Create new extension'|trans }}{% endblock %}
 
